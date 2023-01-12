@@ -46,7 +46,9 @@ void solve()
             y=i;
         }
     }
+    cout<<endl;
     tb.push_back(make_pair(x-1,y-1));
+    cout<<arr[x][y]<<endl;
     while(1)
     {
         if(arr[x-1][y-1]>=arr[x-1][y] && arr[x-1][y-1]>=arr[x][y-1])
@@ -59,12 +61,13 @@ void solve()
         }
         else --y;
         if(x==0 || y==0) break;
+        cout<<arr[x][y]<<endl;
         tb.push_back(make_pair(x-1,y-1));
         ++c;
     }
     for(int i=c-1;i>=0;i--)
     {
-        cout<<endl<<tb[i].first<<" "<<tb[i].second;
+        //cout<<endl<<tb[i].first<<" "<<tb[i].second;
         if(a[tb[i].first]==b[tb[i].second]) 
         {
             s1+=a[tb[i].first]; s2+=b[tb[i].second];
@@ -83,14 +86,14 @@ void solve()
             }
         }
     } 
-    cout<<endl<<s1<<" "<<s2;
+    cout<<endl<<s1<<endl<<s2;
 }
 int main() 
 {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0); 
 	cout.tie(0);
-    files();
+    	files();
 	solve();
 	return 0;
 }
